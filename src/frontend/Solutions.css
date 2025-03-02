@@ -1,0 +1,38 @@
+@keyframes blurToClear {
+    from {
+        opacity: 0;
+        filter: blur(10px); /* Start with a blur */
+    }
+    to {
+        opacity: 1;
+        filter: blur(0); /* Remove blur */
+    }
+}
+
+/* Apply animation to the Solutions page */
+.solutions-page {
+    animation: blurToClear 1s ease-out;
+    opacity: 1;
+    background-color: rgba(202, 54, 54, 0.785); /* Solid maroon background */
+    height: 100vh; /* Full screen height */
+    display: flex;
+    flex-direction: column;
+    
+   
+    
+}
+
+/* Style adjustments for text */
+.solutions-page h2 {
+    font-size: 60px;
+    color: white; /* White text for better visibility */
+    margin-left: 30px;
+    padding-top: 50px;
+    
+}
+
+.solutions-page p {
+    font-size: 20px;
+    color: white; /* White text for readability */
+    margin-left: 30px;
+}

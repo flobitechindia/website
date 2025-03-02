@@ -1,0 +1,266 @@
+/* General Styles for the Info Section */
+.info-section {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+  background-color: black;
+}
+
+.info-box.animate {
+  background-color: red;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* Left Column Styles */
+.left-column {
+  width: 37%; /* Left column takes up 45% of the container */
+  padding-right: 20px;
+  background-color: #18181af8;
+  margin-left: 3%;
+  margin-top: -30px;
+  border: 1px solid white;
+  padding: 20px;
+  background-image: url("../assets/BG-1.avif");
+  background-size: cover;
+  background-position: center;
+  
+}
+
+.left-column .info-box {
+  width: 65%;
+  background-color: transparent;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  margin-top: 30%;
+  margin-right: 5%;
+  margin-left: 10%;
+  justify-content: center;
+}
+
+.left-column h2 {
+  font-size: 20px;
+  color: white;
+}
+
+.left-column p {
+  font-size: 17px;
+  color: rgb(214, 199, 199);
+}
+
+/* Right Column Styles */
+.right-column {
+  width: 75%; /* Right column takes up 50% of the container */
+  background-color: black;
+  margin-right: 3%;
+  margin-top: -30px;
+  border: 1px solid white;
+  padding: 20px;
+}
+
+/* Animations for Right Column's Info Boxes */
+.right-column .info-box.animate {
+  opacity: 1;
+  transform: translateY(0); /* Move to normal position */
+}
+
+.right-column .info-box {
+  background-color: gray;
+  padding: 27px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  opacity: 0; /* Initially hidden */
+  transform: translateY(20px); /* Start from bottom */
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* Zigzag Pattern Styles for Right Column */
+.right-column .zigzag-box {
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+  opacity: 0; /* Initially hidden */
+  transform: translateY(20px); /* Start from bottom */
+  animation: fadeBottomToTop 1s forwards;
+}
+
+@keyframes fadeBottomToTop {
+  0% {
+      opacity: 0;
+      transform: translateY(60px); /* Start below the box */
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0); /* End at normal position */
+  }
+}
+
+/* Zigzag effect: offset each box vertically */
+.right-column .zigzag-box.one {
+  background-color:#4F4F50;
+  transform: translateY(0); /* No offset for the first box */
+  width: 30%;
+  margin-left: 15%;
+  margin-top: -15%;
+  padding-top: 9%;
+  background-image: url("../assets/logo1.png");
+  background-position-x: 10%;
+  background-position-y: 2%;
+  background-repeat: no-repeat;
+  background-size: 85px 85px;
+}
+
+.right-column .zigzag-box.two {
+  background-color: rgb(90, 87, 87);
+  transform: translateY(20px); /* Shift the second box down */
+  width: 29%;
+  margin-left: 53%;
+  margin-top: -15%;
+  padding-top: 9%;
+  background-image: url("../assets/logo2.png");
+  background-position-x: 12%;
+  background-position-y: 2%;
+  background-repeat: no-repeat;
+  background-size: 85px 85px;
+}
+
+.right-column .zigzag-box.three {
+  background-color: rgb(90, 87, 87);
+  transform: translateY(0); /* No offset for the first box */
+  width: 30%;
+  margin-left: 15%;
+  margin-top: -15%;
+  padding-top: 10%;
+  background-image: url("../assets/logo3.png");
+  background-position-x: 10%;
+  background-position-y: 2%;
+  background-repeat: no-repeat;
+  background-size: 85px 85px;
+}
+
+.right-column .zigzag-box.four {
+  background-color: rgb(90, 87, 87);
+  transform: translateY(20px); /* Shift the second box down */
+  width: 30%;
+  margin-left: 53%;
+  margin-top: -24%;
+  padding-top: 10%;
+  background-image: url("../assets/logo4.png");
+  background-position-x: 10%;
+  background-position-y: 2%;
+  background-repeat: no-repeat;
+  background-size: 85px 85px;
+}
+
+/* Styling for text inside each box */
+.right-column .info-box h2 {
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(58, 58, 127);
+  opacity: 0; /* Initially hidden */
+  transform: translateX(-50px); /* Start from the left */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.right-column .info-box p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #cdc5c5;
+  opacity: 0; /* Initially hidden */
+  transform: translateX(-50px); /* Start from the left */
+  transition: opacity 0.8s ease-out 0.5s, transform 0.8s ease-out 0.5s;
+}
+
+.right-column .info-box.animate h2 {
+  opacity: 1;
+  transform: translateX(0); /* End at normal position */
+}
+
+.right-column .info-box.animate p {
+  opacity: 1;
+  transform: translateX(0); /* End at normal position */
+}
+
+/* Left Column Animations */
+.left-column .info-box h2 {
+  font-size: 30px;
+  color: #cac6c6;
+  opacity: 0; /* Initially hidden */
+  transform: translateX(-50px); /* Start from left side */
+  animation: fadeInH2 0.8s forwards; /* Animation for h2 */
+}
+
+@keyframes fadeInH2 {
+  0% {
+      opacity: 0;
+      transform: translateX(-50px); /* Start from the left */
+      filter: blur(5%);
+  }
+  100% {
+      opacity: 1;
+      transform: translateX(0); /* End at normal position */
+      filter: blur(0%);
+  }
+}
+
+.left-column .info-box p {
+  font-size: 1rem;
+  color: #a09a9a;
+  opacity: 0; /* Initially hidden */
+  transform: translateX(-50px); /* Start from left side */
+  animation: fadeInP 0.8s forwards 0.5s; /* Animation for p with delay */
+}
+
+@keyframes fadeInP {
+  0% {
+      opacity: 0;
+      transform: translateX(-50px); /* Start from the left */
+  }
+  100% {
+      opacity: 1;
+      transform: translateX(0); /* End at normal position */
+  }
+}
+
+/* Slide-in from left animation for h2 in the right column */
+.right-column .zigzag-box h2 {
+  font-size: 1.6rem;
+  color: #889CE7;
+  opacity: 0; /* Initially hidden */
+  transform: translateX(-50px); /* Start from the left side */
+  animation: slideInH2 0.8s forwards; /* Slide-in animation for h2 */
+}
+
+@keyframes slideInH2 {
+  0% {
+      opacity: 0;
+      transform: translateX(-50px); /* Start from the left */
+  }
+  100% {
+      opacity: 1;
+      transform: translateX(0); /* End at normal position */
+  }
+}
+
+/* Slide-in from left animation for p in the right column with delay */
+.right-column .zigzag-box p {
+  font-size: 1rem;
+  color: #cdc5c5;
+  opacity: 0; /* Initially hidden */
+  transform: translateX(-50px); /* Start from the left side */
+  animation: slideInP 0.8s forwards 0.5s; /* Slide-in animation for p with delay */
+}
+
+@keyframes slideInP {
+  0% {
+      opacity: 0;
+      transform: translateX(-50px); /* Start from the left */
+  }
+  100% {
+      opacity: 1;
+      transform: translateX(0); /* End at normal position */
+  }
+}
